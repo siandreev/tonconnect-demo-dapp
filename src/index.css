@@ -25,10 +25,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 32px 16px;
 }
 
 h1 {
@@ -66,4 +63,9 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+[data-tc-wallets-modal-container="true"] > div {
+  border-radius: 100px;
 }

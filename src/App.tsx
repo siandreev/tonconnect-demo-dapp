@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {THEME, TonConnectUIProvider} from "@tonconnect/ui-react";
+import {Header} from "./Header.tsx";
+import {SendTx} from "./SendTx.tsx";
+import {Settings} from "./Settings.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return <TonConnectUIProvider
+      manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
+      uiPreferences={{
+        borderRadius: 'none',
+        colorsSet: {
+          [THEME.DARK]: {
+              connectButton: {
+                background: 'orange'
+              }
+          },
+          [THEME.LIGHT]: {
+            background: {
+              qr: 'red'
+            }
+          }
+        }
+      }}
+      actionsConfiguration={{
+          modals: 'all',
+          notifications: ['error']
+      }}
+  >
+    <Header />
+    <SendTx />
+    <Settings />
+  </TonConnectUIProvider>
 }
 
 export default App

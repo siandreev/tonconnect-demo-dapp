@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ton-api/client": "^0.0.1-beta.2",
+    "@ton/core": "^0.56.1",
+    "@ton/crypto": "^3.2.0",
+    "@tonconnect/ui-react": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -23,6 +27,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-node-polyfills": "^0.21.0"
   }
 }
