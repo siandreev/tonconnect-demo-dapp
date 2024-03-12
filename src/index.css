@@ -65,7 +65,3 @@ button:focus-visible {
   }
 }
 
-
-[data-tc-wallets-modal-container="true"] > div {
-  border-radius: 100px;
-}
